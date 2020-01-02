@@ -5,9 +5,72 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-align: center;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* All elements selector  */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Global  */
+.container {
+  border: 1px solid red;
+  margin: 5rem;
+  padding: 5rem;
+}
+
+.text-margin {
+  margin: 20px;
+}
+
+.button {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 1rem;
+}
+
+.button:hover {
+  background-color: #ec273b;
+  color: #fff;
+  border: none;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+}
+
+.link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.link:hover {
+  opacity: 0.7;
+}
+
+/* Navbar Component */
+.navbar {
+  background-color: #dc3545;
+  color: #fff;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+}
+
+.navbar li {
+  padding: 7px 1rem;
 }
