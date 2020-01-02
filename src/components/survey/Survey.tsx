@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Navbar from '../layout/Navbar';
-import Q2 from './Q2';
 
 // OPTIONS
 // Store all state properties and questions in the Survey Component
@@ -13,7 +12,7 @@ const Survey = () => {
 
   // Have all state here, pass state methods as props
   // Q1
-  const [age, setAge] = useState('');
+  const [age, setAge] = useState(0);
   const [gender, setGender] = useState('male');
 
   // Q2
@@ -22,6 +21,14 @@ const Survey = () => {
   // Functions
   const nextQuestion = (): void => {
     setQuestion(question + 1);
+  };
+
+  // const skipQuestion = (): void => {
+  // call this for when you want to skip question
+  // }
+
+  const endSurvey = (): void => {
+    setQuestion(10);
   };
 
   // <form>
@@ -39,14 +46,14 @@ const Survey = () => {
           <Navbar />
           <div className="container">
             <h1>Age</h1>{' '}
-            <form>
+            <form onSubmit={e => e.preventDefault()}>
               {' '}
               <input
                 className="text-margin"
                 type="number"
                 min="0"
                 max="100"
-                onChange={e => setAge(e.target.value)}
+                onChange={e => setAge(parseInt(e.target.value))}
               ></input>
             </form>
             <h1>Gender</h1>{' '}
@@ -64,7 +71,7 @@ const Survey = () => {
             </form>
             <button
               className="button"
-              onClick={() => setQuestion(question + 1)}
+              onClick={() => (age < 18 ? endSurvey() : nextQuestion())}
               style={{ padding: '0.7rem 3rem', marginTop: '2rem' }}
             >
               Next
@@ -73,10 +80,41 @@ const Survey = () => {
         </div>
       );
     case 2:
+      // State logs
       console.log(age);
       console.log(gender);
-      return <Q2 nextQuestion={nextQuestion} />;
+      return (
+        <div>
+          <Navbar />
+          <div className="container">
+            <h1>Do you own a smartphone?</h1>
+            <form onSubmit={e => e.preventDefault()}>
+              <select
+                className="text-margin"
+                value={ownsSmartphone}
+                onChange={e => setOwnsSmartphone(e.target.value)}
+              >
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </form>
+            <button
+              className="button"
+              onClick={() =>
+                ownsSmartphone === 'no' ? endSurvey() : nextQuestion()
+              }
+              style={{ padding: '0.7rem 3rem', marginTop: '2rem' }}
+            >
+              Next
+            </button>
+          </div>
+        </div>
+      );
     case 3:
+      // State logs
+      console.log(age);
+      console.log(gender);
+      console.log(ownsSmartphone);
       return (
         <div>
           <Navbar />
