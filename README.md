@@ -1,6 +1,17 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Smartphone Survey
+
+## Basic Setup Instructions
+
+1. Make sure you have [Node.js](https://nodejs.org/en/) installed.
+
+2. Run `npm i` to install dependencies in node_modules folder.
+
+3. Run `npm start` to run the app in development mode.
+   Open http://localhost:3000 to view it in the browser.
+
+## Other Available Scripts
 
 In the project directory, you can run:
 
