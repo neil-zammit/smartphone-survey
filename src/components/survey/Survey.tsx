@@ -69,6 +69,7 @@ const Survey = () => {
               {' '}
               <input
                 className="text-margin"
+                value={age}
                 type="number"
                 min="0"
                 max="100"
@@ -80,6 +81,7 @@ const Survey = () => {
               {' '}
               <select
                 className="text-margin"
+                value={gender}
                 name="text"
                 onChange={e => setGender(e.target.value)}
               >
