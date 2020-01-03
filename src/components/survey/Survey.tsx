@@ -26,7 +26,7 @@ const Survey = () => {
   const [usedApple, setUsedApple] = useState('yes');
 
   // Q5
-  const [preferredOS, setPreferredOS] = useState('ios');
+  const [preferredOS, setPreferredOS] = useState('android');
 
   // Q6
   const [smartphoneUsage, setSmartphoneUsage] = useState('calls');
@@ -49,7 +49,9 @@ const Survey = () => {
     setQuestion(question + 2);
   };
 
+  // Exclusive if respondent is iPhone user
   const skipTwoQuestions = (): void => {
+    setPreferredOS('ios');
     setQuestion(question + 3);
   };
 
